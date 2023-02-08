@@ -52,7 +52,7 @@ void printUntilZero(void) {
 
 double inputDouble(void) {
     double number;
-    cout << "Skriv inn et desimaltall: ";
+    cout << "Skriv inn et tall: ";
     cin >> number;
     return number;
 }
@@ -66,7 +66,7 @@ void convertNOKtoEUR(void) {
     double eur = nok * 9.75;
     cout << setprecision(2) << fixed << nok << " NOK er " << eur << " EUR\n" << endl;
 }
-void printTimesTable(int width, int height) {
+void printMultTable(int width, int height) {
     for(int i = 1; i <= height; i++) {
         for(int j = 1; j <= width; j++) {
         cout << setw(4) << (i * j);
@@ -74,6 +74,30 @@ void printTimesTable(int width, int height) {
         cout << endl;
     }
 }
+
+double discriminant(double a, double b, double c) {
+    return pow(b,2) - 4*a*c;
+}
+
+void printRealRoots(double a, double b, double c) {
+    double d = discriminant(a,b,c);
+    if (d < 0) {
+        cout << "Ingen reelle rotter" << endl;
+    } else if (d == 0) {
+        cout << "En reell rot: " << -b / (2*a) << endl;
+    } else {
+        cout << "To reelle rotter: " << (-b + sqrt(d)) / (2*a) << " og " << (-b - sqrt(d)) / (2*a) << endl;
+    }
+}
+
+void solveQuadraticEquation(void) {
+    cout << "Skriv inn a, b og c i ax^2 + bx + c = 0" << endl;
+    double a = inputDouble();
+    double b = inputDouble();
+    double c = inputDouble();
+    printRealRoots(a,b,c);
+}
+
 
 int main() {
     while (run) {
@@ -88,8 +112,11 @@ int main() {
                 "7) Sum av tall inntil stopp \n" <<
                 "8) Returner desimaltall \n" <<
                 "9) NOK til EUR \n" <<
-                "10) Returner gangetabell \n" << endl;
-        cout << "Angi valg (0-9): ";
+                "10) Returner gangetabell \n" <<
+                "11) Kvadratisk ligning \n" <<
+                "12) Reelle rotter \n" <<
+                "13) Los kvadratisk ligning \n" << endl;
+        cout << "Angi valg (0-13): ";
         cin >> choice;
         cout << endl;
 
@@ -131,12 +158,25 @@ int main() {
         case 9:
             convertNOKtoEUR();
             break;
-        case 10:
-            printTimesTable(10, 10);
+        case 10: {
+            cout << "Angi bredde paa gangetabellen:" << endl;
+            int width = inputInteger();
+            cout << "Angi hoyde paa gangetabellen:" << endl;
+            int height = inputInteger();
+            printMultTable(width, height);
+            break; }
+        case 11:
+            solveQuadraticEquation();
+            break;
+        case 12:
+            
+            break;
+        case 13:
+            ;
             break;
         default:
             // Not a valid number. Retry.
-            cout << "Valg ma vaere mellom 0 og 9!\n" << endl;
+            cout << "Valg ma vaere mellom 0 og 10!\n" << endl;
             break;
         }
 
