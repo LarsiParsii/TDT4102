@@ -167,9 +167,10 @@ int main() {
         case 7:
             printUntilZero();
             break;
-        case 8:
-            cout << "Du skrev: " << inputDouble() << endl;
-            break;
+        case 8: {
+            double input = inputDouble();
+            cout << "Du skrev: " << input << endl;
+            break; }
         case 9:
             convertNOKtoEUR();
             break;
