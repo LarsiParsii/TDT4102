@@ -40,6 +40,12 @@ void printSum(int count) {
     cout << "Sum av " << count << " tall: " << sum << "\n" << endl;
 }
 
+void printUntilStop() {
+    while (inputInteger != 0) {
+        
+    }
+}
+
 
 int main() {
     while (run) {
@@ -53,8 +59,9 @@ int main() {
                 "6) Sum av n tall \n" <<
                 "7) Sum av tall inntil stopp \n" <<
                 "8) Returner desimaltall \n" <<
-                "9) NOK til EUR \n" << endl;
-        cout << "Angi valg (0-9): ";
+                "9) NOK til EUR \n" <<
+                "10) Gangetabell \n" << endl;
+        cout << "Angi valg (0-10): ";
         cin >> choice;
         cout << endl;
 
@@ -88,6 +95,7 @@ int main() {
             printSum(inputInteger());
             break;
         case 7:
+
             break;
         case 8:
             break;
