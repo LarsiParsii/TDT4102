@@ -1,4 +1,5 @@
 #include "std_lib_facilities.h"
+#include "AnimationWindow.h"
 bool run = true;    // Whether or not to run the program
 int choice;
 
@@ -98,6 +99,21 @@ void solveQuadraticEquation(void) {
     printRealRoots(a,b,c);
 }
 
+void Pythagoras(void) {
+    AnimationWindow win{100,100, 600, 600, "Pythagoras"};
+    int o_x = 250;
+    int o_y = 400;
+    int A = 100;    // Sidene er lik de i figuren
+    int B = 200;
+    Point point1{o_x, o_y}, point2{o_x+A, o_y}, point3{o_x, o_y-B};
+    win.draw_triangle(point1, point2, point3, Color::black);
+    
+    win.draw_quad(point1, point2, Point{point2.x, point2.y+A}, Point{point1.x, point1.y+A}, Color::red);
+    win.draw_quad(point1, point3, Point{point3.x-B, point3.y}, Point{point1.x-B, point1.y}, Color::green);
+    win.draw_quad(point3, point2, Point{point2.x+B, point2.y-A}, Point{point3.x+B, point3.y-A}, Color::blue);
+    win.wait_for_close();
+}
+
 
 int main() {
     while (run) {
@@ -114,9 +130,8 @@ int main() {
                 "9) NOK til EUR \n" <<
                 "10) Returner gangetabell \n" <<
                 "11) Kvadratisk ligning \n" <<
-                "12) Reelle rotter \n" <<
-                "13) Los kvadratisk ligning \n" << endl;
-        cout << "Angi valg (0-13): ";
+                "12) Pythagoras \n" << endl;
+        cout << "Angi valg (0-12): ";
         cin >> choice;
         cout << endl;
 
@@ -152,9 +167,10 @@ int main() {
         case 7:
             printUntilZero();
             break;
-        case 8:
-            cout << "Du skrev: " << inputDouble() << endl;
-            break;
+        case 8: {
+            double input = inputDouble();
+            cout << "Du skrev: " << input << endl;
+            break; }
         case 9:
             convertNOKtoEUR();
             break;
@@ -169,14 +185,11 @@ int main() {
             solveQuadraticEquation();
             break;
         case 12:
-            
-            break;
-        case 13:
-            ;
+            Pythagoras();
             break;
         default:
             // Not a valid number. Retry.
-            cout << "Valg ma vaere mellom 0 og 10!\n" << endl;
+            cout << "Valg ma vaere mellom 0 og 12!\n" << endl;
             break;
         }
 
