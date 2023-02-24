@@ -24,13 +24,15 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = ['main.cpp', 'cannonball.cpp', 'utilities.cpp']
+src = ['main.cpp', 'cannonball.cpp', 'utilities.cpp', 'cannonball_viz.cpp']
 
 exe = executable(
   'program',
   src,
 'cannonball.cpp',
+'cannonball_viz.cpp',
 'main.cpp',
+'utilities.cpp',
   dependencies : [animationwindow_dep, sdl2_dep],
   cpp_args : compiler_flags
 )

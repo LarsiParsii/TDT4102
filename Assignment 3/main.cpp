@@ -1,6 +1,7 @@
 #include "std_lib_facilities.h"
 #include "cannonball.h"
 #include "utilities.h"
+#include "cannonball_viz.h"
 
 // prototypes
 void testDeviation(double compareOperand, double toOperand, double maxError, string name);

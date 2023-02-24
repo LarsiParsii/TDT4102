@@ -1,5 +1,6 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
+#include "cannonball_viz.h"
 #include "cannonball.h"
 
 double acclY()
@@ -66,7 +67,7 @@ double getVelocityY(double theta, double absVelocity)
     return absVelocity * sin(theta);
 }
 
-vector<double> getVelocityVector(double theta, double absVelocity)
+std::vector<double> getVelocityVector(double theta, double absVelocity)
 {
     vector<double> velocityVector;
     velocityVector.push_back(getVelocityX(theta, absVelocity));
@@ -106,6 +107,7 @@ void playTargetPractice(void)
             cout << "The target was " << distanceToTarget << " meters away." << endl;
             cout << "The ball was airborne for ";
             printTime(flightTime(velocityY));
+            cannonBallViz(distanceToTarget, 1000, velocityX, velocityY, 100);
             break;
         }
         else if (distanceDifference < 0)
@@ -119,6 +121,7 @@ void playTargetPractice(void)
         cout << "You missed by " << abs(distanceDifference) << " meters." << endl;
         cout << "The ball was airborne for ";
         printTime(flightTime(velocityY));
+        cannonBallViz(distanceToTarget, 1000, velocityX, velocityY, 100);
     }
 
     if (attempt == 10)

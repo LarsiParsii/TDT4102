@@ -23,7 +23,7 @@ double getVelocityY(double theta, double absVelocity);
 // gitt vinkelen theta. Det første elementet i vectoren skal være
 //x-komponenten, og det andre elementet skal være y-komponenten.
 // "Vector" i funksjonsnavnet er vektor-begrepet i geometri
-vector<double> getVelocityVector(double theta, double absVelocity);
+std::vector<double> getVelocityVector(double theta, double absVelocity);
 double getDistanceTraveled(double velocityX, double velocityY);
 double targetPractice(double distanceToTarget, double velocityX, double velocityY);
 
