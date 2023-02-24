@@ -5,11 +5,13 @@
 void testDeviation(double compareOperand, double toOperand, double maxError, string name);
 
 bool checkIfDistanceToTargetIsCorrect() {
-    double error = targetPractice(100,0,0);
+    double error = targetPractice(0,0,0);
     if(error == 0) return true;
 }
 
 int main() {
+
+
     // Oppgave 4
     /*
     vector<double> velocityVector = getVelocityVector(getUserInputTheta(), getUserInputAbsVelocity());
@@ -24,7 +26,7 @@ int main() {
     }
     */
 
-    checkIfDistanceToTargetIsCorrect();
+    //checkIfDistanceToTargetIsCorrect();
     // Oppgave 4e
     // Kompileringen feiler fordi checkIfDistanceToTargetIsCorrect() ikke returnerer
     // noe dersom if-setningen ikke er sann. Selv etter å ha endret koden endret den seg ikke.
