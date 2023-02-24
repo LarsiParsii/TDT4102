@@ -1,4 +1,5 @@
 #include "std_lib_facilities.h"
+#include "utilities.h"
 #include "cannonball.h"
 
 double acclY()
@@ -81,4 +82,47 @@ double getDistanceTraveled(double velocityX, double velocityY)
 double targetPractice(double distanceToTarget, double velocityX, double velocityY)
 {
     return distanceToTarget - getDistanceTraveled(velocityX, velocityY);
+}
+
+void playTargetPractice(void)
+{
+    int attempt = 0;
+    double distanceToTarget = randomWithLimits(100, 1000);
+
+    for (attempt = 0; attempt < 10; attempt++)
+    {
+        cout << "----------------------------------------" << endl;
+        double theta = getUserInputTheta();
+        double absVelocity = getUserInputAbsVelocity();
+        
+        vector<double> velocityVector = getVelocityVector(theta, absVelocity);
+        double velocityX = velocityVector[0];
+        double velocityY = velocityVector[1];
+        double distanceDifference = targetPractice(distanceToTarget, velocityX, velocityY);
+        
+        if (abs(distanceDifference) < 5)
+        {
+            cout << "You hit the target! \nCongratz, love!" << endl;
+            cout << "The target was " << distanceToTarget << " meters away." << endl;
+            cout << "The ball was airborne for ";
+            printTime(flightTime(velocityY));
+            break;
+        }
+        else if (distanceDifference < 0)
+        {
+            cout << "You overshot the target!" << endl;
+        }
+        else
+        {
+            cout << "You undershot the target!" << endl;
+        }
+        cout << "You missed by " << abs(distanceDifference) << " meters." << endl;
+        cout << "The ball was airborne for ";
+        printTime(flightTime(velocityY));
+    }
+
+    if (attempt == 10)
+    {
+        cout << "\nYou failed to hit the target in 10 attempts. \nI'm still proud of you, though!" << endl;
+    }
 }

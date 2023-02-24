@@ -26,3 +26,5 @@ double getVelocityY(double theta, double absVelocity);
 vector<double> getVelocityVector(double theta, double absVelocity);
 double getDistanceTraveled(double velocityX, double velocityY);
 double targetPractice(double distanceToTarget, double velocityX, double velocityY);
+
+void playTargetPractice(void);

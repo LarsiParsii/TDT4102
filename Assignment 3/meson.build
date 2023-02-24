@@ -24,7 +24,7 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = ['main.cpp', 'cannonball.cpp']
+src = ['main.cpp', 'cannonball.cpp', 'utilities.cpp']
 
 exe = executable(
   'program',

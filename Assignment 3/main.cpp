@@ -1,19 +1,30 @@
 #include "std_lib_facilities.h"
 #include "cannonball.h"
+#include "utilities.h"
 
 // prototypes
 void testDeviation(double compareOperand, double toOperand, double maxError, string name);
 
+/*
 bool checkIfDistanceToTargetIsCorrect() {
     double error = targetPractice(0,0,0);
     if(error == 0) return true;
 }
+*/
 
 int main() {
+    
+    playTargetPractice();
 
-
-    // Oppgave 4
     /*
+    // 5b/c
+    for (int i = 0; i < 10; i++) {
+        cout << randomWithLimits(0, 10) << endl;
+    }
+    */
+
+    /*
+    // Oppgave 4
     vector<double> velocityVector = getVelocityVector(getUserInputTheta(), getUserInputAbsVelocity());
     testDeviation(velocityVector[0], 13.8728, 0.0001, "getVelocityVectorx");
     testDeviation(velocityVector[1], 7.22175, 0.0001, "getVelocityVectory");
@@ -31,8 +42,8 @@ int main() {
     // Kompileringen feiler fordi checkIfDistanceToTargetIsCorrect() ikke returnerer
     // noe dersom if-setningen ikke er sann. Selv etter å ha endret koden endret den seg ikke.
 
-    // Oppgave 3
     /*
+    // Oppgave 3
     cout << "----------------------------------------" << endl;
     testDeviation(acclY(), -9.81, 0.0001, "acclY");
     testDeviation(velY(0, 0), 0, 0.01, "velY");
