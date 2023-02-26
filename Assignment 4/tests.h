@@ -7,3 +7,4 @@ void testSwapByReference(void);
 void testPrintStudent(void);
 void testIsInProgram(void);
 void testString(void);
+void testRandomizeString(void);

@@ -15,3 +15,6 @@ void swapNumbers(int& num1, int& num2);
 void printStudent(const Student student);
 void isInProgram(const Student student, const string program);
 string randomizeString(int length, char min, char max);
+string readInputToString(int length, char min, char max);
+string stringToLower(string input);
+int countChar(string input, char c);

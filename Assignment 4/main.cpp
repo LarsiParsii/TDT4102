@@ -14,6 +14,10 @@ int main() {
         cout << "3) Test swap" << endl;
         cout << "4) Print student info" << endl;
         cout << "5) Test student programme" << endl;
+        cout << "6) testString()" << endl;
+        cout << "7) Test random string" << endl;
+        cout << "8) PLACEHOLDER" << endl;
+        cout << "9) PLACEHOLDER" << endl;
         cout << "q) Quit" << endl;
         cin >> selection;
         cout << endl;
@@ -33,6 +37,17 @@ int main() {
             case '5':
                 testIsInProgram();
                 break;
+            case '6':
+                testString();
+                break;
+            case '7':
+                testRandomizeString();
+                break;
+            case '8':
+                cout << countChar("Hello world!", 'l') << endl;
+                break;
+            case '9':
+                break;
             case 'q':
                 cout << "Bye!" << endl;
                 break;
@@ -40,6 +55,10 @@ int main() {
                 cout << "Invalid selection!" << endl;
                 break;
         }
+        // Don't proceed until user has pressed enter
+        cout << "Press enter to continue...";
+        cin.ignore();
+        cin.get();
     }
     return 0;
 }

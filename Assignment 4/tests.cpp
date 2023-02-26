@@ -47,5 +47,25 @@ void testIsInProgram(void)
 }
 void testString(void)
 {
+    string possibleGrades = "ABCDEF";
+    string grades = randomizeString(8, 'A', 'F');
+    vector<int> gradeCount;
 
+    int sum = 0;
+    int numOfGrades = 0;
+
+    for (int i = 0; i < possibleGrades.length(); i++)
+    {
+        int count = countChar(grades, possibleGrades[i]);
+        gradeCount.push_back(count);
+        cout << possibleGrades[i] << ": " << count << endl;
+        
+        sum += count * (5 - i);
+        numOfGrades += count;
+    }
+    cout << "Average grade: " << static_cast<double>(sum) / numOfGrades << endl;
+}
+void testRandomizeString(void)
+{
+    cout << randomizeString(10, 'a', 'z') << endl;
 }
