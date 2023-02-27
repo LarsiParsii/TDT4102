@@ -24,7 +24,7 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = ['main.cpp', 'utilities.cpp', 'tests.cpp']
+src = ['main.cpp', 'utilities.cpp', 'tests.cpp', 'mastermind.cpp']
 
 exe = executable(
   'program',

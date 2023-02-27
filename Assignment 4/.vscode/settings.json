@@ -13,5 +13,6 @@
         "semaphore": "cpp",
         "algorithm": "cpp",
         "string": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }

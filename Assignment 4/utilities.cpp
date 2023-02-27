@@ -51,46 +51,43 @@ string randomizeString(int length, char min, char max)
     }
     return randomString;
 }
-string readInputToString(int length, char min, char max)
+string readInputToString(unsigned length, char min, char max)
 {
     string input = "";
     while (true)
     {
         input = "";
-        cout << "Enter a word containing characters between " << min << " and " << max
-             << ", in order to create a string of length " << length << endl;
-        cout << "Your input: ";
         cin >> input;
+        input = stringToUpper(input);
         
         if (input.length() != length)
         {
-            cout << "Your string is not of length " << length << "! Try again.\n" << endl;
+            cout << "\nYour string is not of length " << length << "! Try again." << endl;
         }
         else
         {
-            for (int i = 0; i < length; i++)
+            for (unsigned i = 0; i < length; i++)
             {
                 if (input[i] < min || input[i] > max)
                 {
-                    cout << "Your string contains characters outside the range " << min << " to " << max << "! Try again.\n" << endl;
+                    cout << "\nYour string contains characters outside the range "
+                         << min << " to " << max << "! Try again." << endl;
                     break;
                 }
                 else if (i == length - 1)
                 {
-                    cout << "Your string is valid!" << endl;
-                    return stringToLower(input);
+                    return input;
                 }
             }
         }
     }
 }
-
-string stringToLower(string input)
+string stringToUpper(string input)
 {
     string output = "";
-    for (char i : input)
+    for (char c : input)
     {
-        output += tolower(i);
+        output += static_cast<char>(toupper(c));
     }
     return output;
 }

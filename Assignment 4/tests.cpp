@@ -54,13 +54,13 @@ void testString(void)
     int sum = 0;
     int numOfGrades = 0;
 
-    for (int i = 0; i < possibleGrades.length(); i++)
+    for (unsigned i = 0; i < possibleGrades.length(); i++)
     {
         int count = countChar(grades, possibleGrades[i]);
         gradeCount.push_back(count);
         cout << possibleGrades[i] << ": " << count << endl;
         
-        sum += count * (5 - i);
+        sum += count * (5 - static_cast<int>(i));
         numOfGrades += count;
     }
     cout << "Average grade: " << static_cast<double>(sum) / numOfGrades << endl;
