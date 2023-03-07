@@ -87,7 +87,7 @@ int main() {
     triangleNumbersBelow(10);
     
     cout << "\nOppgave f og g)" << endl;
-    naivePrimeNumberSearch(14);
+    naivePrimeNumberSearch(50);
     
     cout << "\nOppgave h)" << endl;
     cout << findGreatestDivisor(14) << endl;
