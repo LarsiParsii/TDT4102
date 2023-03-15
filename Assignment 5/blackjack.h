@@ -9,9 +9,9 @@ class Blackjack {
         vector<Card> playerHand, dealerHand;
         int playerHandSum, dealerHandSum;
         
-        void addToHand(vector<Card> hand);
-        int getHandScore(vector<Card> hand);
-    
+        void drawCardTo(vector<Card> hand);
+        void askPlayerDecision(void);
+        int  getHandScore(vector<Card> hand);
     public:
         Blackjack();
 };
