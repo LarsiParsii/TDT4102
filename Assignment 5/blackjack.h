@@ -8,8 +8,7 @@ class Blackjack {
         CardDeck deck;
         vector<Card> playerHand, dealerHand;
         int playerHandSum, dealerHandSum;
-        
-        void drawCardTo(vector<Card> hand);
+        void drawCardToHand(vector<Card> hand);
         void askPlayerDecision(void);
         int  getHandScore(vector<Card> hand);
     public:
