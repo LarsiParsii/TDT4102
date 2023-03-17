@@ -34,14 +34,14 @@ string rankToString(Rank rank)
 
 Card::Card(Suit suit, Rank rank) : s{suit}, r{rank} {};
 
-string Card::getSuit(void)
+Suit Card::getSuit(void)
 {
-    return suitToString(s);
+    return s;
 }
 
-string Card::getRank(void)
+Rank Card::getRank(void)
 {
-    return rankToString(r);
+    return r;
 }
 
 string Card::toString(void)

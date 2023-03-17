@@ -68,6 +68,7 @@ namespace TDT4102 {
         // Input related context
         std::unordered_map<KeyboardKey, bool> currentKeyStates;
         bool currentLeftMouseButtonState = false;
+        bool currentRightMouseButtonState = false;
 
     public:
         explicit AnimationWindow(int x = 50, int y = 50, int width = 1024, int height = 768, const std::string& title = "Animation Window");
@@ -107,6 +108,7 @@ namespace TDT4102 {
         bool is_key_down(KeyboardKey key);
         TDT4102::Point get_mouse_coordinates();
         bool is_left_mouse_button_down() const;
+        bool is_right_mouse_button_down() const;
 
         // Add a GUI widget to the window such that it becomes visible and the user can interact with it
         void add(TDT4102::Widget &widgetToAdd);

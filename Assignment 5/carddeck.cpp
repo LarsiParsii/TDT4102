@@ -3,10 +3,10 @@
 
 CardDeck::CardDeck(void)
 {
-    // Create a deck of cards
+    // Create a deck of cardsn
     for (int i = 0; i < 4; i++) // 4 suits (spades, hearts, diamonds, clubs)
     {
-        for (int j = 2; j < 15; j++)    // 13 ranks (2-10, J, Q, K, A)
+        for (int j = 2; j < 15; j++) // 13 ranks (2-10, J, Q, K, A)
         {
             cards.push_back(Card(static_cast<Suit>(i), static_cast<Rank>(j)));
         }
@@ -30,10 +30,16 @@ void CardDeck::print(void)
 
 void CardDeck::shuffle(void)
 {
+    random_device seed;
+    default_random_engine randomGenerator(seed());
+    
+
     // Fisher-Yates shuffle
     for (unsigned i = static_cast<unsigned>(cards.size()) - 1; i > 0; i--)
     {
-        unsigned j = static_cast<unsigned>(rand()) % (i + 1);
+        uniform_int_distribution<unsigned> indexes(0, i + 1);
+        
+        unsigned j = static_cast<unsigned>(indexes(randomGenerator)) % (i + 1);
         swap(i, j);
     }
 }

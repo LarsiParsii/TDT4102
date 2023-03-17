@@ -30,8 +30,8 @@ class Card {
         Rank r;
     public:
         Card(Suit suit, Rank rank);
-        string getSuit(void);
-        string getRank(void);
+        Suit getSuit(void);
+        Rank getRank(void);
         string toString(void);
         int getValue(void);
 };

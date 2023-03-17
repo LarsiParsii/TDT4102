@@ -16,7 +16,6 @@
 #include "internal/KeyboardKeyConverter.h"
 #include "internal/nuklear_configured.h"
 #include "widgets/Button.h"
-
 static bool sdlHasBeenInitialised = false;
 
 TDT4102::AnimationWindow::AnimationWindow(int x, int y, int width, int height, const std::string& title) {
@@ -92,9 +91,17 @@ void TDT4102::AnimationWindow::show_frame() {
             KeyboardKey releasedKey = TDT4102::internal::convertSDLKeyToKeyboardKey(event.key.keysym);
             currentKeyStates[releasedKey] = false;
         } else if (event.type == SDL_MOUSEBUTTONDOWN) {
-            currentLeftMouseButtonState = true;
+            if(event.button.button == SDL_BUTTON_LEFT) {
+                currentLeftMouseButtonState = true;
+            } else if(event.button.button == SDL_BUTTON_RIGHT) {
+                currentRightMouseButtonState = true;
+            }
         } else if (event.type == SDL_MOUSEBUTTONUP) {
-            currentLeftMouseButtonState = false;
+            if(event.button.button == SDL_BUTTON_LEFT) {
+                currentLeftMouseButtonState = false;
+            } else if(event.button.button == SDL_BUTTON_RIGHT) {
+                currentRightMouseButtonState = false;
+            }
         }
 
         nk_sdl_handle_event(&event);
@@ -140,7 +147,7 @@ void TDT4102::AnimationWindow::close() {
 void TDT4102::AnimationWindow::wait_for_close() {
     // This forces text to render, and ensures it appears on the screenshot that will be shown perpetually
     //update_gui();
-    //nk_sdl_render(NK_ANTI_ALIASING_ON);
+    nk_sdl_render(NK_ANTI_ALIASING_ON);
 
     // take a screenshot such that the window contents can be redrawn
     TDT4102::Point windowSize = getWindowDimensions();
@@ -325,6 +332,10 @@ int TDT4102::AnimationWindow::height() {
 
 bool TDT4102::AnimationWindow::is_left_mouse_button_down() const {
     return currentLeftMouseButtonState;
+}
+
+bool TDT4102::AnimationWindow::is_right_mouse_button_down() const {
+    return currentRightMouseButtonState;
 }
 
 void TDT4102::AnimationWindow::startNuklearDraw(TDT4102::Point location, std::string uniqueWindowName, unsigned int width, unsigned int height) {

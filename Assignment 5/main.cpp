@@ -5,19 +5,9 @@
 
 int main()
 {
-    CardDeck d;
-    d.print();
+    cout << "\n--------------[ NEW GAME ]--------------\n" << endl;
+    Blackjack game;
+    game.playGame();
 
-    Rank test1 = Rank::jack;
-    Rank test2 = Rank::queen;
-
-    if (test1 == test2)
-    {
-        std::cout << "Enums are equal\n";
-    }
-    else
-    {
-        std::cout << "Enums are not equal\n";
-    }
     return 0;
 }
