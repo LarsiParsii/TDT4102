@@ -24,7 +24,7 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = ['main.cpp', 'card.cpp', 'carddeck.cpp', 'blackjack.cpp']
+src = ['main.cpp', 'card.cpp', 'carddeck.cpp', 'blackjack.cpp', 'game_logic.cpp']
 
 exe = executable(
   'program',

@@ -5,9 +5,12 @@
 
 int main()
 {
-    cout << "\n--------------[ NEW GAME ]--------------\n" << endl;
-    Blackjack game;
-    game.playGame();
-
+    while (true)
+    {
+        cout << "\n--------------[ NEW GAME ]--------------\n"
+             << endl;
+        Blackjack game;
+        game.playGame();
+    }
     return 0;
 }

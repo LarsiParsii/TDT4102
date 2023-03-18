@@ -1,11 +1,10 @@
 #pragma once
-#include "std_lib_facilities.h"
 #include "card.h"
 
 class CardDeck {
     private:
         vector<Card> cards;
-        void swap(unsigned i, unsigned j);    // Private as it is only used by the shuffle() function.
+        void swap(size_t i, size_t j);    // Private as it is only used by the shuffle() function.
     public:
         CardDeck(void);
         void print(void);

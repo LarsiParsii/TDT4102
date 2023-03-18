@@ -13,7 +13,7 @@ CardDeck::CardDeck(void)
     }
 }
 
-void CardDeck::swap(unsigned i, unsigned j)
+void CardDeck::swap(size_t i, size_t j)
 {
     Card temp = cards[i];
     cards[i] = cards[j];
@@ -35,11 +35,11 @@ void CardDeck::shuffle(void)
     
 
     // Fisher-Yates shuffle
-    for (unsigned i = static_cast<unsigned>(cards.size()) - 1; i > 0; i--)
+    for (size_t i = cards.size() - 1; i > 0; i--)
     {
-        uniform_int_distribution<unsigned> indexes(0, i + 1);
+        uniform_int_distribution<size_t> indexes(0, i + 1);
         
-        unsigned j = static_cast<unsigned>(indexes(randomGenerator)) % (i + 1);
+        size_t j = indexes(randomGenerator) % (i + 1);
         swap(i, j);
     }
 }
