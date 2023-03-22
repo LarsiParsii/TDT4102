@@ -6,6 +6,7 @@ filesystem::path fileName{"task1.txt"};
 int main()
 {
     //inputToFile(fileName);
-    addLineNumbersToFile(fileName);
+    //addLineNumbersToFile(fileName);
+    
     return 0;
 }
