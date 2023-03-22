@@ -24,12 +24,15 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = ['main.cpp', 'card.cpp', 'carddeck.cpp', 'blackjack.cpp', 'game_logic.cpp']
+src = []
 
 exe = executable(
   'program',
   src,
+'blackjack.cpp',
 'card.cpp',
+'carddeck.cpp',
+'game_logic.cpp',
 'main.cpp',
   dependencies : [animationwindow_dep, sdl2_dep],
   cpp_args : compiler_flags
