@@ -1,0 +1,9 @@
+{
+	"Creates cout for game info.": {
+		"prefix": "sysprint",
+		"body": [
+			"cout << \"[${1:message}]\" << endl;"
+		],
+		"description": "Creates cout for game info."
+	}
+}
