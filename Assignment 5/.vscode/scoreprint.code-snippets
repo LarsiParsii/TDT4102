@@ -1,0 +1,9 @@
+{
+	"Creates cout for game info.": {
+		"prefix": "scoreprint",
+		"body": [
+			"cout << \"\n-> Your score: \" << playerScore << \"\t\t-> Dealer's score: \" << dealerScore << endl;"
+		],
+		"description": "Prints the player/dealer score."
+	}
+}

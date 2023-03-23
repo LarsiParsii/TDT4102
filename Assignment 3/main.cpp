@@ -8,7 +8,8 @@ void testDeviation(double compareOperand, double toOperand, double maxError, str
 
 /*
 bool checkIfDistanceToTargetIsCorrect() {
-    double error = targetPractice(0,0,0);
+    double error = targetPractice
+    (0,0,0);
     if(error == 0) return true;
 }
 */

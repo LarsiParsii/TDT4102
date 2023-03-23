@@ -1,0 +1,9 @@
+{
+	"Flushes cout buffer.": {
+		"prefix": "newline",
+		"body": [
+			"cout << endl;"
+		],
+		"description": "Flushes cout buffer."
+	}
+}

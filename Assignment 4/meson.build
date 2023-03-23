@@ -24,12 +24,15 @@ else
   compiler_flags = ['-Wconversion', '-fdiagnostics-color=always', '-Werror=return-type', '-fcolor-diagnostics', '-fansi-escape-codes']
 endif
 
-src = ['main.cpp', 'utilities.cpp', 'tests.cpp', 'mastermind.cpp']
+src = []
 
 exe = executable(
   'program',
   src,
 'main.cpp',
+'mastermind.cpp',
+'tests.cpp',
+'utilities.cpp',
   dependencies : [animationwindow_dep, sdl2_dep],
   cpp_args : compiler_flags
 )
