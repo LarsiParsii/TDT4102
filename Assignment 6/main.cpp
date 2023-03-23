@@ -2,10 +2,12 @@
 #include "file_functions.h"
 
 filesystem::path fileName{"task1.txt"};
+filesystem::path grunnlovFile{"grunnlov.txt"};
 
 int main()
 {
     //inputToFile(fileName);
-    addLineNumbersToFile(fileName);
+    //addLineNumbersToFile(fileName);
+    printLetterStats(grunnlovFile);
     return 0;
 }
