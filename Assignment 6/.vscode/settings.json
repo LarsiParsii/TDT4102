@@ -5,6 +5,10 @@
     "cmake.configureOnEdit": false,
     "makefile.alwaysPreConfigure": false,
     "files.associations": {
-        "iostream": "cpp"
+        "*.tcc": "cpp",
+        "ostream": "cpp",
+        "iosfwd": "cpp",
+        "cmath": "cpp",
+        "string": "cpp"
     }
 }

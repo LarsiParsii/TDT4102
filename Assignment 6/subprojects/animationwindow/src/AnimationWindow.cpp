@@ -226,10 +226,14 @@ void TDT4102::AnimationWindow::draw_circle(TDT4102::Point centre, int radius, TD
     }
 }
 
-void TDT4102::AnimationWindow::draw_rectangle(TDT4102::Point topLeftPoint, int width, int height, TDT4102::Color color) {
+void TDT4102::AnimationWindow::draw_rectangle(TDT4102::Point topLeftPoint, int width, int height, TDT4102::Color color, TDT4102::Color borderColor) {
     SDL_Rect fillRect = {topLeftPoint.x, topLeftPoint.y, width, height};
     SDL_SetRenderDrawColor(rendererHandle, color.redChannel, color.greenChannel, color.blueChannel, color.alphaChannel);
     SDL_RenderFillRect(rendererHandle, &fillRect);
+    if (borderColor != Color::transparent){
+        SDL_SetRenderDrawColor(rendererHandle, borderColor.redChannel,borderColor.greenChannel, borderColor.blueChannel, borderColor.alphaChannel);
+        SDL_RenderDrawRect(rendererHandle, &fillRect);
+    }
 }
 
 void TDT4102::AnimationWindow::draw_image(TDT4102::Point topLeftPoint, TDT4102::Image& image, int imageWidth, int imageHeight) {
