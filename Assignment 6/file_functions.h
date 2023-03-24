@@ -1,3 +1,4 @@
+#pragma once
 #include "std_lib_facilities.h"
 
 #define COLUMNS 3

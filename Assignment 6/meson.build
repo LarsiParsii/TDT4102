@@ -29,8 +29,10 @@ src = []
 exe = executable(
   'program',
   src,
+'coursecatalog.cpp',
 'file_functions.cpp',
 'main.cpp',
+'temperature.cpp',
   dependencies : [animationwindow_dep, sdl2_dep],
   cpp_args : compiler_flags
 )

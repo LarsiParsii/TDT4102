@@ -1,8 +1,11 @@
 #include "std_lib_facilities.h"
 #include "file_functions.h"
+#include "coursecatalog.h"
+#include "temperature.h"
 
 filesystem::path fileName{"task1.txt"};
 filesystem::path grunnlovFile{"grunnlov.txt"};
+filesystem::path temperatureFile{"temperatures.txt"};
 
 const map<string, string> capitalsMap{
 	{"Norway", "Oslo"},
@@ -18,8 +21,11 @@ int main()
 {
 	// inputToFile(fileName);
 	// addLineNumbersToFile(fileName);
-    //printLetterStats(grunnlovFile);
-
+    // printLetterStats(grunnlovFile);
+	// testCourseCatalog();
+	vector<Temps> temps = readTemps(temperatureFile);
+	tempStats(temps);
+	
 	/*
 	// Oppgave 2b)
 	std::cout << "Capitals:" << std::endl;

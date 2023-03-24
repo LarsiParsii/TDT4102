@@ -9,6 +9,7 @@ namespace TDT4102 {
     private:
         std::string label;
         bool lastRightMouseButtonState = false;
+        bool lastLeftMouseButtonState = false;
         nk_color labelColor = nk_rgba(175, 175, 175, 255);
         nk_color buttonColor = nk_rgba(50,50,50,255);
         nk_color buttonColorHover = nk_rgba(40, 40, 40,255);
