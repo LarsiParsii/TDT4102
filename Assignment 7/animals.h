@@ -6,10 +6,10 @@ void testAnimal(void);
 class Animal
 {
 public:
-	Animal(string n, int a);
 	virtual ~Animal(){};
 	virtual string toString() = 0;
 protected:
+	Animal(string n, int a);
 	string name;
 	int age;
 };

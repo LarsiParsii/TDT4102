@@ -1,10 +1,12 @@
 #include "std_lib_facilities.h"
 #include "animals.h"
 
+/*
 int main() {
 	testAnimal();
 	return 0;
 }
+*/
 
 /* TEORIOPPGAVER
  *

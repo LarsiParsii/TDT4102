@@ -13,7 +13,6 @@ void testAnimal(void)
 	cout << fly.toString() << endl;
 	*/
 	
-	
 	vector<unique_ptr<Animal>> animalVector;
 	
 	// animalVector.emplace_back(new Animal("Et dyrenavn", 69));
