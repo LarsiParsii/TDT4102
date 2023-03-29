@@ -96,7 +96,7 @@ namespace TDT4102 {
         // These functions should hopefully be rather self-explanatory.
         // They allow you to draw a variety of different shapes.
         void draw_circle(TDT4102::Point centre, int radius, TDT4102::Color color = TDT4102::Color::dark_blue, TDT4102::Color borderColor = TDT4102::Color::transparent);
-        void draw_rectangle(TDT4102::Point topLeftPoint, int width, int height, TDT4102::Color color = TDT4102::Color::dark_green);
+        void draw_rectangle(TDT4102::Point topLeftPoint, int width, int height, TDT4102::Color color = TDT4102::Color::dark_green, TDT4102::Color borderColor = TDT4102::Color::transparent);
         void draw_image(TDT4102::Point topLeftPoint, TDT4102::Image &image, int imageWidth = 0, int imageHeight = 0);
         void draw_text(TDT4102::Point bottomLeftPoint, std::string textToShow, TDT4102::Color color = TDT4102::Color::black, unsigned int fontSize = 20, TDT4102::Font font = TDT4102::Font::arial);
         void draw_line(TDT4102::Point start, TDT4102::Point end, TDT4102::Color color = TDT4102::Color::black);
