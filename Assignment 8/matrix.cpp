@@ -1,5 +1,6 @@
 #include "matrix.h"
 #include <cassert>
+#include <algorithm>
 
 Matrix::Matrix(int nRows, int nColumns)
 	: rows{nRows}, columns{nColumns}
@@ -19,13 +20,36 @@ Matrix::~Matrix()
 	matrix_ptr = nullptr;
 }
 
-std::ostream &operator<<(std::ostream &os, const Matrix &m)
+Matrix::Matrix(const Matrix &rhs)
 {
-	for (int row = 0; row < m.getRows(); row++)
+	columns = rhs.getColumns();
+	rows = rhs.getRows();
+	matrix_ptr = new double[columns * rows];
+	for (int i = 0; i < columns * rows; i++)
 	{
-		for (int col = 0; col < m.getColumns(); col++)
+		matrix_ptr[i] = rhs.matrix_ptr[i];
+	}
+}
+
+Matrix & Matrix::operator=(Matrix & rhs)
+{
+	columns = rhs.getColumns();
+	rows = rhs.getRows();
+	matrix_ptr = new double[columns * rows];
+	for (int i = 0; i < columns * rows; i++)
+	{
+		matrix_ptr[i] = rhs.matrix_ptr[i];
+	}
+	return *this;
+}
+
+std::ostream &operator<<(std::ostream &os, const Matrix &other)
+{
+	for (int row = 0; row < other.getRows(); row++)
+	{
+		for (int col = 0; col < other.getColumns(); col++)
 		{
-			os << m.get(row, col) << " ";
+			os << other.get(row, col) << " ";
 		}
 		os << std::endl;
 	}
