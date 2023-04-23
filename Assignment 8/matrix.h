@@ -13,8 +13,11 @@ public:
 	explicit Matrix(int nRows);
 	~Matrix();
 	Matrix(const Matrix &rhs);
-	friend std::ostream &operator<<(std::ostream &os, const Matrix &other);
-	Matrix &operator=(Matrix &other);
+	friend std::ostream &operator<<(std::ostream &os, const Matrix &rhs);
+	Matrix &operator=(Matrix &rhs);
+	Matrix &operator+=(Matrix &rhs);
+	Matrix &operator+(Matrix &rhs);
+	
 
 	double get(int row, int col) const;
 	void set(int row, int col, double value);

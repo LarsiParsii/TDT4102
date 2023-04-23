@@ -6,6 +6,7 @@
 // Prototypes
 void testMatrix();
 void testMatrixCopy();
+void testMatrixOperators();
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
 	// testMatrix();
 	// dummyTest();
 	// testMatrixCopy();
+	testMatrixOperators();
 }
 
 void testMatrix()
@@ -60,6 +62,25 @@ void testMatrixCopy()
 	m1 = m2;
 	std::cout << m1 << std::endl;
 	std::cout << m2 << std::endl;
+	std::cout << "--------------------" << std::endl;
+	Matrix m3(2, 2);
+	std::cout << m3 << std::endl;
+	m3 = m1;
+	std::cout << m3 << std::endl;
+}
+
+void testMatrixOperators()
+{
+	std::cout << "--------------------" << std::endl;
+	Matrix A(2,2), B(2,2), C(2,2);	
+	// Set A to 1.0, 2.0, 3.0, 4.0
+	A[0][0] = 1.0; A[0][1] = 2.0; A[1][0] = 3.0; A[1][1] = 4.0;
+	B[0][0] = 4.0; B[0][1] = 3.0; B[1][0] = 2.0; B[1][1] = 1.0;
+	C[0][0] = 1.0; C[0][1] = 3.0; C[1][0] = 1.5; C[1][1] = 2.0;
+	A += B + C;
+	std::cout << A << std::endl;
+	std::cout << B << std::endl;
+	std::cout << C << std::endl;
 }
 
 /* TEORI

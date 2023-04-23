@@ -31,7 +31,7 @@ Matrix::Matrix(const Matrix &rhs)
 	}
 }
 
-Matrix & Matrix::operator=(Matrix & rhs)
+Matrix &Matrix::operator=(Matrix &rhs)
 {
 	columns = rhs.getColumns();
 	rows = rhs.getRows();
@@ -43,13 +43,30 @@ Matrix & Matrix::operator=(Matrix & rhs)
 	return *this;
 }
 
-std::ostream &operator<<(std::ostream &os, const Matrix &other)
+Matrix &Matrix::operator+=(Matrix &rhs)
 {
-	for (int row = 0; row < other.getRows(); row++)
+	for (int i = 0; i < getColumns() * getRows(); i++)
 	{
-		for (int col = 0; col < other.getColumns(); col++)
+		matrix_ptr[i] += rhs.matrix_ptr[i];
+	}
+	return *this;
+}
+
+Matrix &Matrix::operator+(Matrix &rhs)
+{
+	/* Use += and copy constructor */
+	Matrix *temp = new Matrix(*this);
+	*temp += rhs;
+	return *temp;
+}
+
+std::ostream &operator<<(std::ostream &os, const Matrix &rhs)
+{
+	for (int row = 0; row < rhs.getRows(); row++)
+	{
+		for (int col = 0; col < rhs.getColumns(); col++)
 		{
-			os << other.get(row, col) << " ";
+			os << rhs.get(row, col) << " ";
 		}
 		os << std::endl;
 	}
