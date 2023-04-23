@@ -2,7 +2,7 @@
 #include "std_lib_facilities.h"
 #include "AnimationWindow.h"
 
-// Prototype
+// Prototypes
 void draw_teeth(AnimationWindow &win, const Point &mouthPos, int mouthW, int mouthH,
 				int numTeeth, int toothHeight);
 

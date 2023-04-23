@@ -1,6 +1,6 @@
 #pragma once
 
-// prototypes
+// Prototypes
 void fillInFibonacciNumbers(int *result, int length);
 void printArray(int *arr, int length);
 void createFibonacci();
